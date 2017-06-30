@@ -5,9 +5,9 @@ from playUtils import pause_before_start, walk_loop
 
 
 def stealth_mode(seconds):
-    press_and_release_key(L_CTRL)
+    hold_key(L_CTRL)
     walk_loop(seconds)
-    press_and_release_key(L_CTRL)
+    hold_key(L_CTRL)
 
 
 def main():

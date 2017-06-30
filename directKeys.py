@@ -21,6 +21,7 @@ NP_8 = 0x48
 
 L_CTRL = 0x1D
 L_SHIFT = 0x2A
+SPACE = 0x39
 
 
 PUL = ctypes.POINTER(ctypes.c_ulong)
@@ -78,9 +79,9 @@ def release_keys(keys):
         release_key(key)
 
 
-def press_and_release_key(hexKeyCode):
+def hold_key(hexKeyCode, duration=0.5):
     press_key(hexKeyCode)
-    time.sleep(0.5)
+    time.sleep(duration)
     release_key(hexKeyCode)
     time.sleep(0.25)
 
