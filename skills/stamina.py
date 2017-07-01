@@ -1,5 +1,5 @@
-from directKeys import *
-from playUtils import pause_before_start, walk_loop
+from utils.directKeys import *
+from utils.common_commands import pause_before_start, walk_loop
 
 
 def run_mode(seconds):

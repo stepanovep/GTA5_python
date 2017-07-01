@@ -1,14 +1,14 @@
-from directKeys import *
-from playUtils import pause_before_start
+from utils.directKeys import *
+from utils.common_commands import pause_before_start
 
 
 def do_plunges(count):
-    plunge_time = 19
+    plunge_time = 20
 
     for i in range(1, count+1):
         plunge(plunge_time)
         if i % 15 == 0:
-            plunge_time += 0.75
+            plunge_time += 0.5
             hold_key(D, duration=1)
         time.sleep(2)
 

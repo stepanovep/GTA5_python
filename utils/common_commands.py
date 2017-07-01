@@ -1,9 +1,7 @@
-import time
-
-from directKeys import *
+from utils.directKeys import *
 
 
-def pause_before_start(sec=4):
+def pause_before_start(sec):
     for i in list(range(sec))[::-1]:
         print(i+1)
         time.sleep(1)

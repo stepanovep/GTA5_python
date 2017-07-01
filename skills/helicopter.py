@@ -1,5 +1,5 @@
-from directKeys import *
-from playUtils import pause_before_start
+from utils.directKeys import *
+from utils.common_commands import pause_before_start
 
 
 def fly_around(seconds):
@@ -17,7 +17,7 @@ def fly_around(seconds):
 
 def main():
     pause_before_start(8)
-    fly_around(60)
+    fly_around(60*60*12)
 
 
 if __name__ == '__main__':
