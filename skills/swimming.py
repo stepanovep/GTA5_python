@@ -9,12 +9,12 @@ def do_plunges(count):
         plunge(plunge_time)
         if i % 15 == 0:
             plunge_time += 0.5
-            hold_key(D, duration=1)
+            press_and_release_key(D, duration=1)
         time.sleep(2)
 
 
 def plunge(duration):
-    hold_key(SPACE)
+    press_and_release_key(SPACE)
     time.sleep(duration)
     press_keys([S, L_SHIFT])
     time.sleep(2.5)

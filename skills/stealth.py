@@ -3,9 +3,9 @@ from utils.common_commands import pause_before_start, walk_loop
 
 
 def stealth_mode(seconds):
-    hold_key(L_CTRL)
+    press_and_release_key(L_CTRL)
     walk_loop(seconds)
-    hold_key(L_CTRL)
+    press_and_release_key(L_CTRL)
 
 
 def main():

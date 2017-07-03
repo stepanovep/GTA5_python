@@ -5,6 +5,7 @@ def pause_before_start(sec):
     for i in list(range(sec))[::-1]:
         print(i+1)
         time.sleep(1)
+    print('start!')
 
 
 def walk_loop(seconds):

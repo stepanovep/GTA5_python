@@ -9,7 +9,7 @@ def fly_around(seconds):
 
     for i in range(1, seconds):
         if i % 15 == 0:
-            hold_key(NP_5, duration=1)
+            press_and_release_key(NP_5, duration=1)
         time.sleep(1)
 
     release_keys([W, NP_8, A])
