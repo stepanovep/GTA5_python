@@ -4,7 +4,7 @@ from utils.common_commands import *
 
 
 def read_record():
-    with open('loop.txt', 'r') as f:
+    with open('xp_loop.txt', 'r') as f:
         for line in f:
             event = line.strip().split()
             event_starts_time = float(event[0][:5])
@@ -35,7 +35,7 @@ def main():
                 s.enter(event[0], 1, release_key, argument=(event[1],))
 
         s.run()
-        time.sleep(70)
+        time.sleep(55)
 
 
 if __name__ == '__main__':
