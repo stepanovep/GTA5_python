@@ -31,7 +31,7 @@ print('keys are pressing : {}'.format(pressed_keys))
 print(*events, sep='\n', end='\n')
 
 
-with open('chapter2.txt', 'w') as f:
+with open('chapter_1_1.txt', 'w') as f:
     for event in events:
         f.write(str(event[0]) + ' ')
         f.write(str(event[1]).strip('\'') + ' ')

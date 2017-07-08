@@ -4,6 +4,7 @@ from utils.common_commands import *
 
 
 def read_record():
+    actions = list()
     with open('xp_loop.txt', 'r') as f:
         for line in f:
             event = line.strip().split()
@@ -15,12 +16,16 @@ def read_record():
             if key_raw == 'Key.backspace':
                 break
 
-            events.append((event_starts_time, key, action))
+            actions.append((event_starts_time, key, action))
+    return actions
 
 
-events = list()
-read_record()
+events = read_record()
 pause_before_start(5)
+
+
+def wait_loading_stage():
+    pass
 
 
 def main():
@@ -30,14 +35,14 @@ def main():
         s = sched.scheduler(time.time, time.sleep)
         for event in events:
             if event[2] == 'pressed':
-                s.enter(event[0], 1, press_key, argument=(event[1],))
+                action = press_key
             else:
-                s.enter(event[0], 1, release_key, argument=(event[1],))
+                action = release_key
+            s.enter(event[0], 1, action, argument=(event[1],))
 
         s.run()
-        time.sleep(55)
-
+        time.sleep(45)
+        # wait_loading_stage()  use OpenCV here instead of dumb time.sleep()
 
 if __name__ == '__main__':
     main()
-

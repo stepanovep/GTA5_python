@@ -16,8 +16,9 @@ def walk_loop(seconds):
 
 def main():
     pause_before_start(5)
-    walk_loop(10)
-
+    press_key(W)
+    time.sleep(2*60*60)
+    release_key(W)
 
 if __name__ == '__main__':
     main()
