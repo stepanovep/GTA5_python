@@ -23,6 +23,7 @@ NP_8 = 0x48
 
 L_CTRL = 0x1D
 L_SHIFT = 0x2A
+R_SHIFT = 0x36
 SPACE = 0x39
 ESC = 0x01
 ENTER = 0x1C
@@ -89,11 +90,11 @@ def release_keys(keys):
         release_key(key)
 
 
-def press_and_release_key(hexKeyCode, duration=0.5):
+def press_and_release_key(hexKeyCode, duration=0.1, sleep_after=0.25):
     press_key(hexKeyCode)
     time.sleep(duration)
     release_key(hexKeyCode)
-    time.sleep(0.25)
+    time.sleep(sleep_after)
 
 
 def release_key(hexKeyCode):

@@ -5,7 +5,7 @@ from utils.common_commands import *
 
 def read_record():
     actions = list()
-    with open('xp_loop.txt', 'r') as f:
+    with open('records/xp_loop.txt', 'r') as f:
         for line in f:
             event = line.strip().split()
             event_starts_time = float(event[0][:5])
