@@ -16,8 +16,6 @@
 12.772361755371094 Key.enter released
 15.00529956817627 Key.enter pressed
 15.102557897567749 Key.enter released
-16.707826137542725 Key.down pressed
-16.82814621925354 Key.down released
 18.09200692176819 Key.enter pressed
 18.26446557044983 Key.enter released
 19.75192093849182 Key.enter pressed

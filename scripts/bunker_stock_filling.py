@@ -13,7 +13,7 @@ def main():
 
     press_key(W)
 
-    for i in range(0):
+    for i in range(3):
 
         press_and_release_key(ENTER, duration=3)
         pyautogui.moveTo(500, 475, duration=0.25)
@@ -31,17 +31,15 @@ def main():
         press_and_release_key(ESC, duration=1)
         press_and_release_key(ESC, duration=1)
 
-        # time.sleep(2*60*60 + 10*60)
-        time.sleep(10)
+        time.sleep(2*60*60 + 10*60)
 
     release_key(W)
 
     time.sleep(2)
-    press_and_release_key(R_SHIFT, sleep_after=2)
+    press_and_release_key(R_SHIFT, sleep_after=3)
 
     exit_the_game()
 
 
 if __name__ == '__main__':
     main()
-

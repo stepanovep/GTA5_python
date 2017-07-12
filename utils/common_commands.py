@@ -25,7 +25,10 @@ def exit_the_game():
 
 def main():
     pause_before_start(5)
-    exit_the_game()
+    press_and_release_key(W, duration=2*60*60 + 25*60)
+
+    time.sleep(5)
+    # exit_the_game()
 
 if __name__ == '__main__':
     main()

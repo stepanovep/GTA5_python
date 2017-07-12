@@ -41,8 +41,8 @@ def main():
             s.enter(event[0], 1, action, argument=(event[1],))
 
         s.run()
-        time.sleep(45)
-        # wait_loading_stage()  use OpenCV here instead of dumb time.sleep()
+        time.sleep(90)
+        # wait_loading_stage()  usaw OpenCV here instead of dumb time.sleep()
 
 if __name__ == '__main__':
     main()
