@@ -25,7 +25,6 @@ while True:
         starting_value += 1
     else:
         print('File does not exist, starting fresh!', starting_value)
-
         break
 
 
@@ -57,6 +56,8 @@ def keys_to_output(keys):
         output = nk
     return output
 
+GAME_WIDTH = 1024
+GAME_HEIGHT = 768
 
 def main(file_name, starting_value):
     file_name = file_name
@@ -72,10 +73,10 @@ def main(file_name, starting_value):
     while (True):
 
         if not paused:
-            screen = grab_screen(region=(0, 40, 1920, 1120))
+            screen = grab_screen(region=(0, 40, GAME_WIDTH, GAME_HEIGHT+40))
             last_time = time.time()
             # resize to something a bit more acceptable for a CNN
-            screen = cv2.resize(screen, (480, 270))
+            screen = cv2.resize(screen, (80, 60))
             # run a color convert:
             screen = cv2.cvtColor(screen, cv2.COLOR_BGR2RGB)
 
@@ -98,7 +99,7 @@ def main(file_name, starting_value):
                     print('SAVED')
                     training_data = []
                     starting_value += 1
-                    file_name = 'X:/pygta5/phase7-larger-color/training_data-{}.npy'.format(starting_value)
+                    file_name = 'C:/Users/stepanovep/PycharmProjects/PyGta5/phase7-larger-color/training_data-{}.npy'.format(starting_value)
 
         keys = key_check()
         if 'T' in keys:

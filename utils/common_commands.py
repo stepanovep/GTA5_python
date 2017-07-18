@@ -15,6 +15,7 @@ def walk_loop(seconds):
 
 
 def exit_the_game():
+    # todo make sure it's active scene
     press_and_release_key(ESC, sleep_after=1.5)
     press_and_release_key(ARROW_RIGHT, sleep_after=1.5)
     press_and_release_key(ENTER, sleep_after=1)
@@ -22,13 +23,11 @@ def exit_the_game():
     press_and_release_key(ENTER, sleep_after=10)
     press_and_release_key(ENTER)
 
+    print('the game was closed')
 
 def main():
     pause_before_start(5)
-    press_and_release_key(W, duration=2*60*60 + 25*60)
-
-    time.sleep(5)
-    # exit_the_game()
+    walk_loop(2*60*60)
 
 if __name__ == '__main__':
     main()
