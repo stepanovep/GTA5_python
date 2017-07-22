@@ -15,6 +15,7 @@ S = 0x1F
 D = 0x20
 E = 0x12
 F = 0x21
+M = 0x32
 
 NP_4 = 0x4B
 NP_5 = 0x4C
@@ -90,10 +91,12 @@ def release_keys(keys):
         release_key(key)
 
 
-def press_and_release_key(hexKeyCode, duration=0.1, sleep_after=0.25):
-    press_key(hexKeyCode)
-    time.sleep(duration)
-    release_key(hexKeyCode)
+def press_and_release_key(hexKeyCode, times=1, duration=0.1, sleep_after=0.25):
+    for i in range(times):
+        press_key(hexKeyCode)
+        time.sleep(duration)
+        release_key(hexKeyCode)
+        time.sleep(0.5)
     time.sleep(sleep_after)
 
 

@@ -1,5 +1,5 @@
 import pyautogui
-from utils.common_commands import pause_before_start, exit_the_game
+from utils.common_commands import *
 from utils.directKeys import *
 
 # 500 475 - Войти на сайт
@@ -30,16 +30,24 @@ def buy_bunker_supply():
 
 def main():
     pause_before_start(5)
-    press_key(W)
+    press_key(F)
 
     for i in range(5):
+        # you should be a CEO and stand right after the laptop
+        press_and_release_key(E, sleep_after=5)
         buy_bunker_supply()
-        time.sleep(2*60*60 + 20*60)
+        time.sleep(3)
+        press_and_release_key(R_SHIFT, sleep_after=2)
+        time.sleep(10)
+        get_tired_of_ceo()
+        time.sleep(2*60*60 + 15*60)
+        become_ceo()
+        time.sleep(5)
 
-    release_key(W)
+    release_key(F)
 
     time.sleep(2)
-    press_and_release_key(BACKSPACE, sleep_after=3)
+    press_and_release_key(R_SHIFT, sleep_after=3)
 
     exit_the_game()
 

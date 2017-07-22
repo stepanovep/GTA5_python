@@ -25,9 +25,32 @@ def exit_the_game():
 
     print('the game was closed')
 
+
+def become_ceo():
+    # todo make sure it's active scene
+    # todo make sure u are not CEO first
+    press_and_release_key(M, sleep_after=1)
+    press_and_release_key(ARROW_DOWN, times=6)
+    press_and_release_key(ENTER, times=3, duration=1, sleep_after=2)
+    print('You become CEO')
+
+
+def get_tired_of_ceo():
+    # todo make sure it's active scene
+    # todo make sure u are CEO at first
+    press_and_release_key(M, sleep_after=1)
+    press_and_release_key(ENTER)
+    press_and_release_key(ARROW_UP)
+    press_and_release_key(ENTER, times=3, duration=1, sleep_after=2)
+    print('You become a usual citizen')
+
+
 def main():
     pause_before_start(5)
-    walk_loop(2*60*60)
+    become_ceo()
+    time.sleep(2)
+    get_tired_of_ceo()
+
 
 if __name__ == '__main__':
     main()
