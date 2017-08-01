@@ -1,3 +1,5 @@
+# @author Sentdex [https://github.com/Sentdex]
+
 import numpy as np
 from grabscreen import grab_screen
 import cv2
