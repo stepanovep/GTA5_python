@@ -7,6 +7,9 @@ from utils.directKeys import *
 # 500 580 - Купить сырье
 # 570 470 - Подтвердить
 
+MINUTES = 60
+HOURS = MINUTES * 60
+
 
 def buy_bunker_supply():
     press_and_release_key(ENTER, duration=3)
@@ -29,7 +32,7 @@ def buy_bunker_supply():
 
 
 def main():
-    pause_before_start(5)
+    pause_before_start(8)
     press_key(F)
 
     for i in range(5):
@@ -39,8 +42,10 @@ def main():
         time.sleep(3)
         press_and_release_key(R_SHIFT, sleep_after=2)
         time.sleep(10)
+        press_and_release_key(BACKSPACE)
         get_tired_of_ceo()
-        time.sleep(2*60*60 + 15*60)
+        time.sleep(2*HOURS + 20*MINUTES)
+        press_and_release_key(BACKSPACE)
         become_ceo()
         time.sleep(5)
 

@@ -47,9 +47,7 @@ def get_tired_of_ceo():
 
 def main():
     pause_before_start(5)
-    become_ceo()
-    time.sleep(2)
-    get_tired_of_ceo()
+    walk_loop(60*69)
 
 
 if __name__ == '__main__':
