@@ -22,7 +22,6 @@ def exit_the_game():
     press_and_release_key(ARROW_UP, sleep_after=1)
     press_and_release_key(ENTER, sleep_after=10)
     press_and_release_key(ENTER)
-
     print('the game was closed')
 
 
@@ -32,7 +31,7 @@ def become_ceo():
     press_and_release_key(M, sleep_after=1)
     press_and_release_key(ARROW_DOWN, times=6)
     press_and_release_key(ENTER, times=3, duration=1, sleep_after=2)
-    print('You become CEO')
+    print('You became CEO')
 
 
 def get_tired_of_ceo():
@@ -42,7 +41,7 @@ def get_tired_of_ceo():
     press_and_release_key(ENTER)
     press_and_release_key(ARROW_UP)
     press_and_release_key(ENTER, times=3, duration=1, sleep_after=2)
-    print('You become a usual citizen')
+    print('You became a usual player')
 
 
 def main():

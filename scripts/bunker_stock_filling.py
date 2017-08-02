@@ -2,10 +2,10 @@ import pyautogui
 from utils.common_commands import *
 from utils.directKeys import *
 
-# 500 475 - Войти на сайт
-# 250 375 - Пополнить запас
-# 500 580 - Купить сырье
-# 570 470 - Подтвердить
+# 400 375 - Войти на сайт
+# 200 300 - Пополнить запас
+# 400 460 - Купить сырье
+# 450 375 - Подтвердить
 
 MINUTES = 60
 HOURS = MINUTES * 60
@@ -13,16 +13,16 @@ HOURS = MINUTES * 60
 
 def buy_bunker_supply():
     press_and_release_key(ENTER, duration=3)
-    pyautogui.moveTo(500, 475, duration=0.25)
+    pyautogui.moveTo(400, 375, duration=0.25)
     press_and_release_key(ENTER, duration=1.25)
 
-    pyautogui.moveTo(250, 375, duration=0.25)
+    pyautogui.moveTo(200, 300, duration=0.25)
     press_and_release_key(ENTER, duration=1.25)
 
-    pyautogui.moveTo(500, 580, duration=0.25)
+    pyautogui.moveTo(400, 460, duration=0.25)
     press_and_release_key(ENTER, duration=1.25)
 
-    pyautogui.moveTo(570, 470, duration=0.25)
+    pyautogui.moveTo(450, 375, duration=0.25)
     press_and_release_key(ENTER, duration=0.5)
 
     press_and_release_key(ESC, duration=1)

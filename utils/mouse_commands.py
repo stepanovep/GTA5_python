@@ -1,6 +1,6 @@
-import pyautogui
+import win32api
 import time
-from utils.common_commands import pause_before_start
 
-
-pause_before_start(6)
+while True:
+    print(win32api.GetCursorPos())
+    time.sleep(0.5)
