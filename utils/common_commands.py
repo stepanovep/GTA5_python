@@ -1,5 +1,6 @@
 from utils.directKeys import *
 from grabscreen import grab_screen
+from logger import logger
 
 
 def pause_before_start(sec):
@@ -23,7 +24,7 @@ def exit_the_game():
     press_and_release_key(ARROW_UP, sleep_after=1)
     press_and_release_key(ENTER, sleep_after=10)
     press_and_release_key(ENTER)
-    print('the game was closed')
+    logger.info('the game was closed')
 
 
 def become_ceo():
@@ -32,7 +33,7 @@ def become_ceo():
     press_and_release_key(M, sleep_after=1)
     press_and_release_key(ARROW_DOWN, times=6)
     press_and_release_key(ENTER, times=3, duration=1, sleep_after=2)
-    print('You became CEO')
+    logger.info('You became CEO')
 
 
 def get_tired_of_ceo():
@@ -42,7 +43,7 @@ def get_tired_of_ceo():
     press_and_release_key(ENTER)
     press_and_release_key(ARROW_UP)
     press_and_release_key(ENTER, times=3, duration=1, sleep_after=2)
-    print('You became a usual player')
+    logger.info('You became a usual player')
 
 
 def is_game_active():
@@ -66,8 +67,8 @@ def is_game_active():
             a_greens.append(armor_color[1])
             a_blues.append(armor_color[2])
 
-    h_greens.sort(); h_reds.sort(); h_blues.sort()
-    a_reds.sort();a_greens.sort(); a_blues.sort()
+    h_reds.sort(); h_greens.sort(); h_blues.sort()
+    a_reds.sort(); a_greens.sort(); a_blues.sort()
 
     median_id = len(h_greens) // 2
 

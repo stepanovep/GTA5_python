@@ -1,11 +1,12 @@
 import pyautogui
 from utils.common_commands import *
 from utils.directKeys import *
+from logger import logger
 
-# 400 375 - Войти на сайт
-# 200 300 - Пополнить запас
-# 400 460 - Купить сырье
-# 450 375 - Подтвердить
+# 400 375 - Click To Enter
+# 200 300 - Resupply
+# 400 460 - By Supplies
+# 450 375 - Confirm
 
 MINUTES = 60
 HOURS = MINUTES * 60
@@ -28,23 +29,23 @@ def buy_bunker_supply():
     press_and_release_key(ESC, duration=1)
     press_and_release_key(ESC, duration=1)
 
-    print('bunker supply has been bought')
+    logger.info('bunker supply has been bought')
 
 
 def main():
-    pause_before_start(8)
+    pause_before_start(5)
     press_key(F)
 
-    for i in range(5):
+    for i in range(4):
         # you should be a CEO and stand right after the laptop
         press_and_release_key(E, sleep_after=5)
         buy_bunker_supply()
-        time.sleep(3)
+        time.sleep(2)
         press_and_release_key(R_SHIFT, sleep_after=2)
-        time.sleep(10)
+        time.sleep(7.5)
         press_and_release_key(BACKSPACE)
         get_tired_of_ceo()
-        time.sleep(2*HOURS + 20*MINUTES)
+        time.sleep(2*HOURS + 15*MINUTES)
         press_and_release_key(BACKSPACE)
         become_ceo()
         time.sleep(5)
