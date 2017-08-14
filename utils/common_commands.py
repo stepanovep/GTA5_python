@@ -47,16 +47,16 @@ def get_tired_of_ceo():
 
 
 def is_game_active():
-    health_region = (17, 771, 113, 779)
-    armor_region = (114, 771, 210, 779)
+    health_region = (16, 609, 88, 613)
+    armor_region = (92, 609, 164, 613)
     health = grab_screen(region=health_region)
     armor = grab_screen(region=armor_region)
 
     h_reds, h_greens, h_blues = [], [], []
     a_reds, a_greens, a_blues = [], [], []
 
-    for x in range(1, 8):
-        for y in range(1, 95):
+    for x in range(5):
+        for y in range(72):
             health_color = health[x, y]
             h_reds.append(health_color[0])
             h_greens.append(health_color[1])
@@ -86,10 +86,8 @@ def is_game_active():
 
 
 def main():
-    pause_before_start(3)
-    while True:
-        print(is_game_active())
-        time.sleep(2)
+    pause_before_start(5)
+    get_tired_of_ceo()
 
 
 if __name__ == '__main__':
