@@ -1,6 +1,8 @@
 from utils.directKeys import *
 from grabscreen import grab_screen
 from logger import logger
+import constants
+import cv2
 
 
 def pause_before_start(sec):
@@ -86,8 +88,13 @@ def is_game_active():
 
 
 def main():
-    pause_before_start(5)
-    get_tired_of_ceo()
+    pause_before_start(15)
+    for i in range(80):
+        press_and_release_key(Z)
+        img = grab_screen(region=constants.GAME_REGION)
+        cv2.imwrite('screenshot{}.png'.format(i), img)
+        time.sleep(15*constants.MINUTES)
+        i += 1
 
 
 if __name__ == '__main__':

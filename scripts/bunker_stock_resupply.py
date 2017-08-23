@@ -40,34 +40,33 @@ def main():
     pause_before_start(5)
     press_key(F)
 
-    for i in range(4):
+    for i in range(15):
         # you should be a CEO and stand right after the laptop
-        log_supply_screen(i)
-        log_money_screen(i, 'before_resupply')
+        press_and_release_key(BACKSPACE)
+        become_ceo()
+        log_supply_screen(i+1)
         press_and_release_key(E, sleep_after=5)
         buy_bunker_supply()
         time.sleep(2)
         press_and_release_key(R_SHIFT, sleep_after=2)
-        log_money_screen(i, 'after_resupply')
+        log_money_screen(i+1, 'after_resupply')
         time.sleep(7.5)
         press_and_release_key(BACKSPACE)
         get_tired_of_ceo()
-        time.sleep(2*HOURS + 15*MINUTES)
-        press_and_release_key(BACKSPACE)
-        become_ceo()
-        time.sleep(5)
+        time.sleep(3*HOURS + 20*MINUTES) #+ 10*MINUTES*(i == 0))
 
     release_key(F)
-
     time.sleep(2)
+    press_and_release_key(BACKSPACE)
     press_and_release_key(R_SHIFT, sleep_after=3)
 
+    log_supply_screen("_end_of_script")
     exit_the_game()
 
 
-def log_supply_screen(idx):
+def log_supply_screen(str):
     img = grab_screen(region=SUPPLY_REGION)
-    cv2.imwrite('supply{}.png'.format(idx), img)
+    cv2.imwrite('supply{}.png'.format(str), img)
     logger.debug('supply screen has been logged..')
 
 
